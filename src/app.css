@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 240 10% 3.9%;
+
+		--muted: 240 4.8% 95.9%;
+		--muted-foreground: 240 3.8% 46.1%;
+
+		--popover: 0 0% 100%;
+		--popover-foreground: 240 10% 3.9%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 240 10% 3.9%;
+
+		--border: 240 5.9% 65%;
+		--input: 240 5.9% 90%;
+
+		--primary: 240 5.9% 10%;
+		--primary-foreground: 0 0% 98%;
+
+		--secondary: 240 4.8% 90%;
+		--secondary-foreground: 240 5.9% 10%;
+
+		--accent: 240 4.8% 95.9%;
+		--accent-foreground: 240 5.9% 10%;
+
+		--destructive: 0 72.2% 50.6%;
+		--destructive-foreground: 0 0% 98%;
+
+		--ring: 240 10% 3.9%;
+
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		--background: 240 3% 15%;
+		--foreground: 0 0% 98%;
+
+		--muted: 240 3.7% 15.9%;
+		--muted-foreground: 240 5% 64.9%;
+
+		--popover: 240 10% 3.9%;
+		--popover-foreground: 0 0% 98%;
+
+		--card: 240 10% 3.9%;
+		--card-foreground: 0 0% 98%;
+
+		--border: 240 3% 35.9%;
+		--input: 240 1% 12%;
+
+		--primary: 0 0% 98%;
+		--primary-foreground: 240 5.9% 10%;
+
+		--secondary: 240 3% 10%;
+		--secondary-foreground: 0 0% 98%;
+
+		--accent: 240 3% 15.9%;
+		--accent-foreground: 0 0% 98%;
+
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 0 0% 98%;
+
+		--ring: 240 4.9% 83.9%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: false;
+	line-height: 1.65;
+}
+
+p {
+	font-size: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: true;
+	line-height: 1.15;
+}
+
+h1,
+.text-size-h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	margin-top: 0;
+	font-size: 3.05em;
+}
+
+h2,
+.text-size-h2 {
+	font-size: 2.44em;
+}
+
+h3,
+.text-size-h3 {
+	font-size: 1.95em;
+}
+
+h4,
+.text-size-h4 {
+	font-size: 1.56em;
+}
+
+h5,
+.text-size-h5 {
+	font-size: 1.25em;
+}
+
+.text-caption {
+	font-size: 0.8em;
+}
+
+small,
+.text-small {
+	font-size: 0.64em;
+}
+
+@layer base {
+	.chat-container p {
+		padding-bottom: 0.5em;
+		line-height: 1.4;
+	}
+
+	.chat-container h1,
+	.chat-container h2,
+	.chat-container h3,
+	.chat-container h4,
+	.chat-container h5 {
+		margin: 0.2em 0 0.2em 0;
+		line-height: 1.4;
+	}
+
+	.chat-container ul {
+		display: block;
+		list-style-type: disc;
+		margin-top: 0.2em;
+		margin-bottom: 0.2em;
+		padding-left: 1.2em;
+	}
+
+	.chat-container ol {
+		display: block;
+		list-style-type: decimal;
+		margin-top: 0.2em;
+		margin-bottom: 0.2em;
+		padding-left: 1.2em;
+	}
+
+	.chat-container li {
+		display: list-item;
+		padding-left: 0.5em;
+		padding-bottom: 0.5em;
+		line-height: 1.4;
+	}
+
+	.chat-container .user-message {
+		@apply bg-secondary py-2 px-4 rounded-full self-end;
+	}
+
+	.chat-container .user-message p {
+		padding: 0;
+	}
+
+	.chat-container .assistant-message {
+		@apply self-start;
+	}
+
+	.chat-container .assistant-message h3:has(+ pre) {
+		@apply px-4 py-2 mt-4 mb-0 bg-secondary text-secondary-foreground;
+	}
+
+	.chat-container .assistant-message pre {
+		@apply px-4 pt-4 pb-6 py-2 bg-black text-white;
+	}
+}
